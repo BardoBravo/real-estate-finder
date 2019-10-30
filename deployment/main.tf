@@ -33,7 +33,7 @@ resource "google_storage_bucket" "items" {
   location = "US"
 }
 
-resource "google_app_engine_application" "app" {
+resource "google_app_engine_application" "app1" {
   project     = "${var.project}"
   location_id = "${var.region}"
 }
