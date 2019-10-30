@@ -6,7 +6,7 @@ eval "$(jq -r '@sh "PROJECT=\(.project) REGION=\(.region)"')"
 
 while true
 do
-	URL=$(gcloud beta run services describe find-new-rent-service \
+	URL=$(gcloud beta run services describe find-new-rent-service-2 \
 		--platform managed \
 		--project $PROJECT \
 		--region $REGION \

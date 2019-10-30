@@ -18,7 +18,7 @@ variable "crontab_schedule" {
 }
 
 locals {
-  container_tag = "gcr.io/${var.project}/find-new-rent-service:latest"
+  container_tag = "gcr.io/${var.project}/find-new-rent-service-2:latest"
 }
 
 provider "google" {
@@ -33,7 +33,7 @@ resource "google_storage_bucket" "items" {
   location = "US"
 }
 
-resource "google_app_engine_application" "app1" {
+resource "google_app_engine_application" "app" {
   project     = "${var.project}"
   location_id = "${var.region}"
 }
@@ -49,7 +49,7 @@ resource "google_cloud_scheduler_job" "job" {
     uri         = "${data.external.google_cloud_run_service.result.url}/"
   }
 
-  depends_on = ["google_app_engine_application.app1"]
+  depends_on = ["google_app_engine_application.app"]
 }
 
 resource "google_cloudbuild_trigger" "default" {
@@ -75,7 +75,7 @@ resource "google_cloudbuild_trigger" "default" {
     step {
       name = "gcr.io/cloud-builders/gcloud"
       args = [
-        "beta", "run", "deploy", "find-new-rent-service",
+        "beta", "run", "deploy", "find-new-rent-service-2",
         "--region", "${var.region}",
         "--image", "${local.container_tag}",
         "--update-env-vars", "GCLOUD_BUCKET=$${_BUCKET}",
