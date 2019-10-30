@@ -17,9 +17,8 @@ type Exporter interface {
 }
 
 type CSVExporter struct {
-	writer    *csv.Writer
-	fileName  string
-	isOnCloud bool
+	writer   *csv.Writer
+	fileName string
 }
 
 func (exp CSVExporter) write(record Item) error {

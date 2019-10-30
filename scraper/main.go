@@ -111,8 +111,8 @@ func startDBService() (dbAccess DBCall) {
 
 	var ctx = context.Background()
 
-	var sa = option.WithCredentialsFile("deployment/credentials.json")
-	if sa != nil {
+	if os.Getenv("PORT") == "8080" {
+		var sa = option.WithCredentialsFile("deployment/credentials.json")
 		var app, errorApp = firebase.NewApp(ctx, nil, sa)
 		if errorApp != nil {
 			log.Fatalf("firebase.NewApp: %v", errorApp)
@@ -153,7 +153,7 @@ func Run(params url.Values) string {
 		fileName := strings.Split(reflect.TypeOf(platform).String(), ".")[1]
 		sender := EmailSender{scraperName: fileName}
 		fileName = path.Join(config.dataDir, fileName+".csv")
-		exporter := CSVExporter{fileName: fileName, isOnCloud: config.isDefined}
+		exporter := CSVExporter{fileName: fileName}
 		exporter.run(config, platform.crawl)
 		//TODO: version 1.3 -> just store the new items
 		config.storage.write(fileName)
