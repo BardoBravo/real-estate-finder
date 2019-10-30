@@ -110,13 +110,13 @@ func readConfig(params url.Values) Config {
 func startDBService() (dbAccess DBCall) {
 
 	var ctx = context.Background()
-	file, err := os.Stat("deployment/credentials.json")
+	_, err := os.Stat("deployment/credentials.json")
 
 	if os.IsNotExist(err) {
-		var sa = option.WithCredentialsFile("deployment/credentials.json")
-		var app, errorApp = firebase.NewApp(ctx, nil, sa)
+		var conf = &firebase.Config{ProjectID: "find-new-rent"}
+		var app, errorApp = firebase.NewApp(ctx, conf)
 		if errorApp != nil {
-			log.Fatalf("firebase.NewApp: %v", errorApp)
+			log.Fatalf("app./firestore: %v", errorApp)
 		}
 		var client, errFirestore = app.Firestore(ctx)
 		if errFirestore != nil {
@@ -129,10 +129,10 @@ func startDBService() (dbAccess DBCall) {
 		}
 
 	} else {
-		var conf = &firebase.Config{ProjectID: "find-new-rent"}
-		var app, errorApp = firebase.NewApp(ctx, conf)
+		var sa = option.WithCredentialsFile("deployment/credentials.json")
+		var app, errorApp = firebase.NewApp(ctx, nil, sa)
 		if errorApp != nil {
-			log.Fatalf("app./firestore: %v", errorApp)
+			log.Fatalf("firebase.NewApp: %v", errorApp)
 		}
 		var client, errFirestore = app.Firestore(ctx)
 		if errFirestore != nil {
