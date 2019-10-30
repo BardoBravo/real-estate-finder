@@ -49,7 +49,7 @@ resource "google_cloud_scheduler_job" "job" {
     uri         = "${data.external.google_cloud_run_service.result.url}/"
   }
 
-  depends_on = ["google_app_engine_application.app"]
+  depends_on = ["google_app_engine_application.app1"]
 }
 
 resource "google_cloudbuild_trigger" "default" {
