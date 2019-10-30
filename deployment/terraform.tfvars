@@ -1,0 +1,6 @@
+bucket = "finder-imob-registry"
+cloud_source_repository = "github_bardobravo_finder-imob"
+crontab_schedule = "0 8 * * *"
+project = "finder-imob"
+region = "us-east1"
+zone = "us-east1-b"
