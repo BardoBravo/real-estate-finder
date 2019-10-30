@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	//scraper "github.com/BardoBravo/finder-imob/scraper"
-	scraper "./scraper"
+	scraper "github.com/BardoBravo/real-estate-finder/scraper"
+	//scraper "./scraper"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 bucket = "finder-imob-registry"
-cloud_source_repository = "github_bardobravo_finder-imob"
+cloud_source_repository = "github_bardobravo_real-estate-finder"
 crontab_schedule = "0 8 * * *"
-project = "finder-imob"
+project = "find-new-rent"
 region = "us-east1"
 zone = "us-east1-b"

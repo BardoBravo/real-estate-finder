@@ -18,7 +18,7 @@ variable "crontab_schedule" {
 }
 
 locals {
-  container_tag = "gcr.io/${var.project}/finder-imob-service:latest"
+  container_tag = "gcr.io/${var.project}/find-new-rent-service:latest"
 }
 
 provider "google" {
@@ -75,7 +75,7 @@ resource "google_cloudbuild_trigger" "default" {
     step {
       name = "gcr.io/cloud-builders/gcloud"
       args = [
-        "beta", "run", "deploy", "finder-imob-service",
+        "beta", "run", "deploy", "find-new-rent-service",
         "--region", "${var.region}",
         "--image", "${local.container_tag}",
         "--update-env-vars", "GCLOUD_BUCKET=$${_BUCKET}",
