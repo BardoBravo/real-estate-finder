@@ -110,12 +110,12 @@ func readConfig(params url.Values) Config {
 func startDBService() (dbAccess DBCall) {
 
 	var ctx = context.Background()
+	file, err := os.Stat("deployment/credentials.json")
 
-	if os.Getenv("PORT") == "8080" {
+	if os.IsNotExist(err) {
 		var sa = option.WithCredentialsFile("deployment/credentials.json")
 		var app, errorApp = firebase.NewApp(ctx, nil, sa)
 		if errorApp != nil {
-			log.Fatalf("PORT: %v", os.Getenv("PORT"))
 			log.Fatalf("firebase.NewApp: %v", errorApp)
 		}
 		var client, errFirestore = app.Firestore(ctx)
