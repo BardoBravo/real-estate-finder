@@ -115,6 +115,7 @@ func startDBService() (dbAccess DBCall) {
 		var sa = option.WithCredentialsFile("deployment/credentials.json")
 		var app, errorApp = firebase.NewApp(ctx, nil, sa)
 		if errorApp != nil {
+			log.Fatalf("PORT: %v", os.Getenv("PORT"))
 			log.Fatalf("firebase.NewApp: %v", errorApp)
 		}
 		var client, errFirestore = app.Firestore(ctx)
