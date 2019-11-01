@@ -22,7 +22,7 @@ func (emailer EmailSender) writeAndSend() {
 	collectedRegistries := getNewRegistries(emailer.scraperName)
 
 	if len(collectedRegistries) > 0 {
-		//sendEmail(collectedRegistries)
+		sendEmail(collectedRegistries)
 	}
 
 }
@@ -36,7 +36,7 @@ func getNewRegistries(scraperName string) string {
 
 	log.Println("ScraperName: ", scraperName)
 
-	searchedTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), 0, 0, 0, 0, timeLocation)
+	searchedTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day()-1, 0, 0, 0, 0, timeLocation)
 	query := DBAccess.DBClient.Collection(scraperName).Where("ScrapedAt", ">", searchedTime).Documents(DBAccess.DBContext)
 	collectedRegistries := ""
 	counter := 0

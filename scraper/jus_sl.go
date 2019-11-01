@@ -1,15 +1,12 @@
 package cloudrun
 
 import (
-	"expvar"
 	"fmt"
 	"log"
 	"time"
 
 	"github.com/gocolly/colly"
 )
-
-var counter = expvar.NewInt("counter")
 
 type Jus_sl struct{}
 
@@ -60,9 +57,8 @@ func (platform Jus_sl) crawl(config Config, exporter Exporter) *colly.Collector 
 	c := platform.NewCollector(config)
 
 	c.OnXML("//*[contains(@class, 'col-sm-6 col-md-4 boxi animated')]", func(e *colly.XMLElement) {
-		counter.Add(1)
+
 		log.Print("Starting Justus1")
-		log.Print(counter)
 		item := platform.parseItem(e)
 
 		exporter.storeDocument(item)

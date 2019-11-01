@@ -1,4 +1,4 @@
-bucket = "finder-imob-registry"
+bucket = "finder-imob-daily"
 cloud_source_repository = "github_bardobravo_real-estate-finder"
 crontab_schedule = "0 8 * * *"
 project = "find-new-rent"

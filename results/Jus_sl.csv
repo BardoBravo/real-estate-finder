@@ -1,13 +1,43 @@
 Title,Location,HasExactLocation,Price,LivingSpace,Rooms,Url,ScrapedAt
-imovel imovelbox 11373,Jardim Das Acacias São Leopoldo Casa Residencial,false,"R$ 390.000,00",106.45m²,3,"http://www.justoimoveis.com.br/casa-residencial-jardim-das-acacias-sao-leopoldo,11373",2019-10-30T01:58:27Z
-imovel imovelbox 11372,Centro São Leopoldo Fascino,false,"R$ 478.000,00",78.49m²,2,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11372",2019-10-30T01:58:28Z
-imovel imovelbox 11371,Morro do Espelho São Leopoldo Sinodal,false,"R$ 848.000,00",128.32m²,3,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11371",2019-10-30T01:58:28Z
-imovel imovelbox 11370,Cristo Rei São Leopoldo Luxemburgo,false,"R$ 285.000,00",74.51m²,2,"http://www.justoimoveis.com.br/apartamento-cristo-rei-sao-leopoldo,11370",2019-10-30T01:58:28Z
-imovel imovelbox 11369,Centro São Leopoldo Coliseu,false,"R$ 190.000,00",78.35m²,3,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11369",2019-10-30T01:58:28Z
-imovel imovelbox 11368,Centro São Leopoldo Village,false,"R$ 150.000,00",71.6m²,1,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11368",2019-10-30T01:58:28Z
-imovel imovelbox 11362,Santa Teresa São Leopoldo Recanto do Vale,false,"R$ 860.000,00",143.28m²,3,"http://www.justoimoveis.com.br/casa-em-condominio-santa-teresa-sao-leopoldo,11362",2019-10-30T01:58:29Z
-imovel imovelbox 11359,Sao Jose São Leopoldo Casa Residencial,false,"R$ 1.290.000,00",246m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11359",2019-10-30T01:58:29Z
-imovel imovelbox 11358,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11358",2019-10-30T01:58:29Z
-imovel imovelbox 11357,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11357",2019-10-30T01:58:29Z
-imovel imovelbox 11356,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11356",2019-10-30T01:58:29Z
-imovel imovelbox 11355,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11355",2019-10-30T01:58:30Z
+imovel imovelbox 11373,Jardim Das Acacias São Leopoldo Casa Residencial,false,"R$ 390.000,00",106.45m²,3,"http://www.justoimoveis.com.br/casa-residencial-jardim-das-acacias-sao-leopoldo,11373",2019-11-01T02:03:40Z
+imovel imovelbox 11372,Centro São Leopoldo Fascino,false,"R$ 478.000,00",78.49m²,2,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11372",2019-11-01T02:03:42Z
+imovel imovelbox 11371,Morro do Espelho São Leopoldo Sinodal,false,"R$ 848.000,00",128.32m²,3,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11371",2019-11-01T02:03:42Z
+imovel imovelbox 11370,Cristo Rei São Leopoldo Luxemburgo,false,"R$ 285.000,00",74.51m²,2,"http://www.justoimoveis.com.br/apartamento-cristo-rei-sao-leopoldo,11370",2019-11-01T02:03:42Z
+imovel imovelbox 11369,Centro São Leopoldo Coliseu,false,"R$ 190.000,00",78.35m²,3,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11369",2019-11-01T02:03:43Z
+imovel imovelbox 11368,Centro São Leopoldo Village,false,"R$ 150.000,00",71.6m²,1,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11368",2019-11-01T02:03:43Z
+imovel imovelbox 11362,Santa Teresa São Leopoldo Recanto do Vale,false,"R$ 860.000,00",143.28m²,3,"http://www.justoimoveis.com.br/casa-em-condominio-santa-teresa-sao-leopoldo,11362",2019-11-01T02:03:43Z
+imovel imovelbox 11359,Sao Jose São Leopoldo Casa Residencial,false,"R$ 1.290.000,00",246m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11359",2019-11-01T02:03:44Z
+imovel imovelbox 11358,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11358",2019-11-01T02:03:44Z
+imovel imovelbox 11357,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11357",2019-11-01T02:03:44Z
+imovel imovelbox 11356,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11356",2019-11-01T02:03:44Z
+imovel imovelbox 11355,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11355",2019-11-01T02:03:45Z
+imovel imovelbox 11354,Sao Jose São Leopoldo Casa Residencial,false,"R$ 980.000,00",212m²,3,"http://www.justoimoveis.com.br/casa-residencial-sao-jose-sao-leopoldo,11354",2019-11-01T02:03:48Z
+imovel imovelbox 11350,Sao Leopoldo Casa Comercial/Residencial,false,"R$ 700.000,00",300m²,3,"http://www.justoimoveis.com.br/casa-comercial-residencial-sao-leopoldo,11350",2019-11-01T02:03:48Z
+imovel imovelbox 11349,Centro São Leopoldo Center,false,"R$ 138.000,00",24.74m²,0,"http://www.justoimoveis.com.br/conj-sala-comercial-centro-sao-leopoldo,11349",2019-11-01T02:03:48Z
+imovel imovelbox 11348,Centro São Leopoldo Center,false,"R$ 125.000,00",24.74m²,0,"http://www.justoimoveis.com.br/conj-sala-comercial-centro-sao-leopoldo,11348",2019-11-01T02:03:48Z
+imovel imovelbox 11346,Arroio da Manteiga São Leopoldo Casa Residencial,false,"R$ 180.000,00",88.17m²,2,"http://www.justoimoveis.com.br/casa-residencial-arroio-da-manteiga-sao-leopoldo,11346",2019-11-01T02:03:49Z
+imovel imovelbox 11345,Jardim America São Leopoldo Casa Residencial,false,"R$ 499.000,00",224m²,3,"http://www.justoimoveis.com.br/casa-residencial-jardim-america-sao-leopoldo,11345",2019-11-01T02:03:49Z
+imovel imovelbox 11342,Campestre São Leopoldo Terreno,false,"R$ 100.000,00",,0,"http://www.justoimoveis.com.br/terreno-campestre-sao-leopoldo,11342",2019-11-01T02:03:49Z
+imovel imovelbox 11341,Campestre São Leopoldo Terreno,false,"R$ 100.000,00",,0,"http://www.justoimoveis.com.br/terreno-campestre-sao-leopoldo,11341",2019-11-01T02:03:49Z
+imovel imovelbox 11340,Campestre São Leopoldo Terreno,false,"R$ 100.000,00",,0,"http://www.justoimoveis.com.br/terreno-campestre-sao-leopoldo,11340",2019-11-01T02:03:50Z
+imovel imovelbox 11337,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 395.000,00",69.61m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11337",2019-11-01T02:03:50Z
+imovel imovelbox 11336,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 395.000,00",69.73m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11336",2019-11-01T02:03:50Z
+imovel imovelbox 11335,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 398.000,00",70.46m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11335",2019-11-01T02:03:50Z
+imovel imovelbox 11334,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 398.000,00",74.54m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11334",2019-11-01T02:03:54Z
+imovel imovelbox 11333,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 390.000,00",69.61m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11333",2019-11-01T02:03:54Z
+imovel imovelbox 11332,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 390.000,00",69.73m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11332",2019-11-01T02:03:55Z
+imovel imovelbox 11331,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 395.000,00",70.46m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11331",2019-11-01T02:03:55Z
+imovel imovelbox 11330,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 395.000,00",74.54m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11330",2019-11-01T02:03:55Z
+imovel imovelbox 11329,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 390.000,00",74.54m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11329",2019-11-01T02:03:55Z
+imovel imovelbox 11328,Morro do Espelho São Leopoldo Mont Blanc,false,"R$ 390.000,00",74.54m²,2,"http://www.justoimoveis.com.br/apartamento-morro-do-espelho-sao-leopoldo,11328",2019-11-01T02:03:55Z
+imovel imovelbox 11327,Campestre São Leopoldo Casa Residencial,false,"R$ 370.000,00",93.65m²,3,"http://www.justoimoveis.com.br/casa-residencial-campestre-sao-leopoldo,11327",2019-11-01T02:03:56Z
+imovel imovelbox 11326,Campestre São Leopoldo Casa Residencial,false,"R$ 370.000,00",93.65m²,3,"http://www.justoimoveis.com.br/casa-residencial-campestre-sao-leopoldo,11326",2019-11-01T02:03:56Z
+imovel imovelbox 11324,Centro São Leopoldo San Marco,false,"R$ 220.000,00",63.15m²,2,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11324",2019-11-01T02:03:56Z
+imovel imovelbox 11323,Morro do Espelho São Leopoldo Bosques Morro do Espelho,false,"R$ 840.000,00",122m²,3,"http://www.justoimoveis.com.br/casa-em-condominio-morro-do-espelho-sao-leopoldo,11323",2019-11-01T02:03:56Z
+imovel imovelbox 11322,Centro São Leopoldo Valentine,false,"R$ 579.000,00",115.72m²,3,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11322",2019-11-01T02:03:56Z
+imovel imovelbox 11321,Centro São Leopoldo Villa Bela,false,"R$ 360.000,00",65.62m²,2,"http://www.justoimoveis.com.br/apartamento-centro-sao-leopoldo,11321",2019-11-01T02:04:00Z
+imovel imovelbox 11320,Jardim America São Leopoldo Casa Residencial,false,"R$ 800.000,00",204m²,3,"http://www.justoimoveis.com.br/casa-residencial-jardim-america-sao-leopoldo,11320",2019-11-01T02:04:01Z
+imovel imovelbox 11318,Jardim America São Leopoldo Casa Residencial,false,"R$ 1.250.000,00",331.5m²,3,"http://www.justoimoveis.com.br/casa-residencial-jardim-america-sao-leopoldo,11318",2019-11-01T02:04:01Z
+imovel imovelbox 11317,Santos Dumont Sao Leopoldo Residencial Hannover,false,"R$ 130.000,00",51.4m²,2,"http://www.justoimoveis.com.br/apartamento-santos-dumont-sao-leopoldo,11317",2019-11-01T02:04:01Z
+imovel imovelbox 11316,Vicentina São Leopoldo Condominio Residencial Cidade Jardim,false,"R$ 120.000,00",43.47m²,2,"http://www.justoimoveis.com.br/casa-em-condominio-vicentina-sao-leopoldo,11316",2019-11-01T02:04:01Z
+imovel imovelbox 11315,Morro do Espelho Sao Leopoldo Recanto do Vale,false,"R$ 895.000,00",143.28m²,3,"http://www.justoimoveis.com.br/casa-em-
