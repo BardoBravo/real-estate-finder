@@ -22,7 +22,7 @@ func (emailer EmailSender) writeAndSend() {
 	collectedRegistries := getNewRegistries(emailer.scraperName)
 
 	if len(collectedRegistries) > 0 {
-		sendEmail(collectedRegistries)
+		sendEmail(collectedRegistries, emailer.scraperName)
 	}
 
 }
@@ -66,7 +66,7 @@ func getNewRegistries(scraperName string) string {
 	return collectedRegistries
 }
 
-func sendEmail(body string) {
+func sendEmail(body string, scraper string) {
 	from := "ImobiliariaCVTR@gmail.com"
 	pass := "CVTRImob963"
 	to := "claudiovtramos@gmail.com"
@@ -74,7 +74,7 @@ func sendEmail(body string) {
 	//TODO: change subject name so it contains the current date as well
 	msg := "From: " + from + "\n" +
 		"To: " + to + "\n" +
-		"Subject: Novos Imóveis Justo\n\n" + body
+		"Subject: Novos Imóveis" + scraper + "\n\n" + body
 
 	log.Println("Msg: ", msg)
 
