@@ -33,14 +33,14 @@ func (Rodrigues) parseItem(e *colly.XMLElement) Item {
 		"-> rooms: " + fmt.Sprintf("%.2f", rooms))
 
 	return Item{
-		Title:            title,
-		Location:         location,
-		HasExactLocation: false,
-		Price:            price,
-		LivingSpace:      livingSpace,
-		Rooms:            rooms,
-		Url:              e.Request.AbsoluteURL(url),
-		ScrapedAt:        time.Now().UTC(),
+		Title:    title,
+		Location: location,
+		//HasExactLocation: false,
+		Price:       price,
+		LivingSpace: livingSpace,
+		Rooms:       rooms,
+		Url:         e.Request.AbsoluteURL(url),
+		ScrapedAt:   time.Now().UTC(),
 	}
 }
 
@@ -62,13 +62,13 @@ func (platform Rodrigues) crawl(config Config, exporter Exporter) *colly.Collect
 		exporter.write(item)
 	})
 
-	c.OnXML("//div[contains(@class, 'pagination-cell')]/a", func(e *colly.XMLElement) {
+	/* c.OnXML("//div[contains(@class, 'pagination-cell')]/a", func(e *colly.XMLElement) {
 		url := e.Request.AbsoluteURL(e.Attr("href"))
 		log.Print("URL:" + url)
 		url = parseURL(url, " ")
 		log.Print("URL parsed:" + url)
 		c.Visit(url)
-	})
+	}) */
 
 	c.Visit("http://www.rodrigues.imb.br/imoveis/a-venda/sao-leopoldo")
 	return c

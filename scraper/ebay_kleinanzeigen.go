@@ -25,10 +25,10 @@ func (EBayKleinanzeigen) parseItem(e *colly.XMLElement) Item {
 	rooms, _ := parseFloat(roomsString, " Zimmer")
 
 	return Item{
-		Title:            title,
-		Location:         location,
-		HasExactLocation: false,
-		Price:            price,
+		Title:    title,
+		Location: location,
+		//HasExactLocation: false,
+		Price: price,
 		//livingSpace:      livingSpace,
 		Rooms:     rooms,
 		Url:       e.Request.AbsoluteURL(url),

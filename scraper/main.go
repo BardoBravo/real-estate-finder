@@ -25,9 +25,9 @@ type Platform interface {
 
 type Item struct {
 	//TODO: version 1.1 -> add new fields
-	Title            string
-	Location         string
-	HasExactLocation bool
+	Title    string
+	Location string
+	//HasExactLocation bool
 	//price            int
 	Price string
 	//livingSpace float64
@@ -54,7 +54,7 @@ func (record Item) csvRow() []string {
 	return []string{
 		record.Title,
 		record.Location,
-		strconv.FormatBool(record.HasExactLocation),
+		//strconv.FormatBool(record.HasExactLocation),
 		//strconv.Itoa(record.price),
 		record.Price,
 		//strconv.FormatFloat(record.livingSpace, 'f', -1, 64),

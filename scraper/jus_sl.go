@@ -34,14 +34,14 @@ func (Jus_sl) parseItem(e *colly.XMLElement) Item {
 		"-> rooms: " + fmt.Sprintf("%.2f", rooms))
 
 	return Item{
-		Title:            title,
-		Location:         location,
-		HasExactLocation: false,
-		Price:            price,
-		LivingSpace:      livingSpace,
-		Rooms:            rooms,
-		Url:              e.Request.AbsoluteURL(url),
-		ScrapedAt:        time.Now().UTC(),
+		Title:    title,
+		Location: location,
+		//HasExactLocation: false,
+		Price:       price,
+		LivingSpace: livingSpace,
+		Rooms:       rooms,
+		Url:         e.Request.AbsoluteURL(url),
+		ScrapedAt:   time.Now().UTC(),
 	}
 }
 
