@@ -69,18 +69,19 @@ func getNewRegistries(scraperName string) string {
 func sendEmail(body string, scraper string) {
 	from := "ImobiliariaCVTR@gmail.com"
 	pass := "CVTRImob963"
-	to := "claudiovtramos@gmail.com"
+	claudioEmail := "claudiovtramos@gmail.com"
+	jaquelineEmail := "jackecassia@gmail.com"
 
 	//TODO: change subject name so it contains the current date as well
 	msg := "From: " + from + "\n" +
-		"To: " + to + "\n" +
+		"To: " + claudioEmail + "," + jaquelineEmail + "\n" +
 		"Subject: Novos Imóveis" + scraper + "\n\n" + body
 
 	log.Println("Msg: ", msg)
 
 	err := smtp.SendMail("smtp.gmail.com:587",
 		smtp.PlainAuth("", from, pass, "smtp.gmail.com"),
-		from, []string{to}, []byte(msg))
+		from, []string{claudioEmail, jaquelineEmail}, []byte(msg))
 
 	if err != nil {
 		log.Fatalf("smtp error: %s", err)

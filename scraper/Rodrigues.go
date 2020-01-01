@@ -16,12 +16,11 @@ func (Rodrigues) parseItem(e *colly.XMLElement) Item {
 	title := e.ChildText("//*[contains(@class, 'card-text')]//text()")
 	url := e.ChildAttr(selector, "href")
 	location := e.ChildText("//*[contains(@class, 'card-title')]//text()")
-	location = location + " " + e.ChildText("//*[contains(@class, 'cat')]//text()")
-	priceString := e.ChildText("//*[contains(@class, 'valor')]//strong")
+	priceString := e.ChildText("//*[contains(@class, 'money location')]//text()")
 	price, _ := parsePrice(priceString)
-	spaceString := e.ChildText("//*[contains(@class, 'pull-right')]//span[position() = 4]//text()")
+	spaceString := e.ChildText("//*[contains(@class, 'values')]//div[position() = 5]//p//span//text()")
 	livingSpace := parseSpaceString(spaceString)
-	roomsString := e.ChildText("//*[contains(@class, 'pull-right')]//span[position()= 1]//text()]")
+	roomsString := e.ChildText("//*[contains(@class, 'values')]//div[position() = 1]//p//span//text()")
 	rooms, _ := parseFloat(roomsString, " quartos")
 	log.Print("-> Selector:" + selector +
 		"-> Title: " + title +
@@ -63,13 +62,13 @@ func (platform Rodrigues) crawl(config Config, exporter Exporter) *colly.Collect
 		exporter.write(item)
 	})
 
-	/* c.OnXML("//div[contains(@class, 'paginacao-bottom')]/a[last()]]", func(e *colly.XMLElement) {
+	c.OnXML("//div[contains(@class, 'pagination-cell')]/a", func(e *colly.XMLElement) {
 		url := e.Request.AbsoluteURL(e.Attr("href"))
 		log.Print("URL:" + url)
 		url = parseURL(url, " ")
 		log.Print("URL parsed:" + url)
 		c.Visit(url)
-	}) */
+	})
 
 	c.Visit("http://www.rodrigues.imb.br/imoveis/a-venda/sao-leopoldo")
 	return c
