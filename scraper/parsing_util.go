@@ -13,8 +13,6 @@ func parsePrice(valueStr string) (string, error) {
 	price = price / 100
 	if error != nil {
 		log.Print(error)
-	} else {
-		log.Print(price)
 	}
 	return valueStr, error
 }

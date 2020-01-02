@@ -13,9 +13,10 @@ type Rodrigues struct{}
 func (Rodrigues) parseItem(e *colly.XMLElement) Item {
 	selector := "//*[contains(@class, 'col-sm-12 col-lg-6 box-align')]//div//a"
 	selector_previous := "//div//a"
-	title := e.ChildText("//*[contains(@class, 'card-text')]//text()")
+	title := e.ChildText("//*[contains(@class, 'property_full_reference')]//text()")
 	url := e.ChildAttr(selector, "href")
 	location := e.ChildText("//*[contains(@class, 'card-title')]//text()")
+	location = location + " - " + e.ChildText("//*[contains(@class, 'card-text')]//text()")
 	priceString := e.ChildText("//*[contains(@class, 'money location')]//text()")
 	price, _ := parsePrice(priceString)
 	spaceString := e.ChildText("//*[contains(@class, 'values')]//div[position() = 5]//p//span//text()")
