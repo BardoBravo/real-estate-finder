@@ -81,7 +81,7 @@ func sendEmail(body string, scraper string) {
 
 	err := smtp.SendMail("smtp.gmail.com:587",
 		smtp.PlainAuth("", from, pass, "smtp.gmail.com"),
-		from, []string{claudioEmail, jaquelineEmail}, []byte(msg))
+		from, []string{jaquelineEmail, claudioEmail}, []byte(msg))
 
 	if err != nil {
 		log.Fatalf("smtp error: %s", err)

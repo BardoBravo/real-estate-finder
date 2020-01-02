@@ -59,6 +59,7 @@ func (platform Rodrigues) crawl(config Config, exporter Exporter) *colly.Collect
 
 		log.Print("Starting Rodrigues Card")
 		item := platform.parseItem(e)
+		exporter.storeDocument(item)
 		exporter.write(item)
 	})
 
