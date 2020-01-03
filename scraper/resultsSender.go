@@ -70,11 +70,13 @@ func sendEmail(body string, scraper string) {
 	from := "ImobiliariaCVTR@gmail.com"
 	pass := "CVTRImob963"
 	claudioEmail := "claudiovtramos@gmail.com"
-	jaquelineEmail := "jackecassia@gmail.com"
+	jaquelineEmail := "Jaqueline@gprimeimoveis.com.br"
+	tiarleEmail := "tiarle@gprimeimoveis.com.br"
+	GuiEmail := "guilherme@gprimeimoveis.com.br"
 
 	//TODO: change subject name so it contains the current date as well
 	msg := "From: " + from + "\n" +
-		"To: " + claudioEmail + "," + jaquelineEmail + "\n" +
+		"To: " + claudioEmail + "," + jaquelineEmail + "," + tiarleEmail + "," + GuiEmail + "\n" +
 		"Subject: Novos Imóveis" + scraper + "\n\n" + body
 
 	log.Println("Msg: ", msg)
