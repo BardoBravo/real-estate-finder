@@ -23,6 +23,7 @@ type Platform interface {
 	crawl(config Config, writer Exporter) *colly.Collector
 }
 
+// Item represents an item
 type Item struct {
 	//TODO: version 1.1 -> add new fields
 	Title    string

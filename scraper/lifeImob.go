@@ -59,7 +59,7 @@ func (platform LifeImob) NewCollector(config Config) *colly.Collector {
 func (platform LifeImob) crawl(config Config, exporter Exporter) *colly.Collector {
 	c := platform.NewCollector(config)
 
-	c.OnXML("/html/body/div[5]/div/div/div[2]/div[2]/ul/li[1]", func(e *colly.XMLElement) {
+	c.OnXML("//div[contains(@class, 'grid-list-header')", func(e *colly.XMLElement) {
 		log.Print("Starting LifeImob Storage")
 		item := platform.parseItem(e)
 
