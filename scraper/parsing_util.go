@@ -42,9 +42,7 @@ func parseTitle(value string) string {
 }
 
 func parseRoomsLifeImob(value string) (float64, error) {
-	log.Printf("To be Replaced: %v\n", value)
 	replaced := strings.ReplaceAll(value, "Dormitório(s) ", "")
-	log.Printf("Replaced: %v\n", replaced)
 	return strconv.ParseFloat(replaced, 64)
 }
 
@@ -61,5 +59,12 @@ func parsePriceLifeImob(value string) string {
 	replaced := regexNoTabs.ReplaceAllString(value, ``)
 	replaced = regexNoNewLines.ReplaceAllString(replaced, ``)
 	return strings.Replace(replaced, "Valor", "", -1)
+}
 
+func parseLocationLifeImob(value string) string {
+	regexNoTabs := regexp.MustCompile(`\x{0009}`)
+	regexNoNewLines := regexp.MustCompile(`\x{000D}\x{000A}|[\x{000A}\x{000B}\x{000C}\x{000D}\x{0085}\x{2028}\x{2029}]`)
+	replaced := regexNoTabs.ReplaceAllString(value, ``)
+	replaced = regexNoNewLines.ReplaceAllString(replaced, ``)
+	return replaced
 }

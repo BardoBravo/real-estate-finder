@@ -1,7 +1,6 @@
 package cloudrun
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -18,57 +17,6 @@ var LocalExporter Exporter
 
 type Ext struct {
 	*gocrawl.DefaultExtender
-}
-
-func (LifeImob) parseItem(e *colly.HTMLElement) Item {
-	//LocalExporter.storeDocument()
-	log.Print("teste")
-	log.Print(e)
-	/* log.Println(e.ChildTexts("*"))
-	log.Println(e.ChildAttrs("*", "h1"))
-
-	iTags := e.DOM.Find("i")
-	iTags.Each(func(_ int, s *goquery.Selection) {
-		log.Println(s)
-	})
-	log.Println(e.DOM.Find("font").Text()) */
-
-	selector := "div[class=grid-list-header]"
-	log.Println(e.ChildTexts(selector))
-	selector_previous := "//*[contains(contains(@id, 'divBusca')]//ul//li//"
-	//url := ""
-	url := e.ChildAttr(selector, "href")
-
-	title := e.ChildText("//a//div[position() = 3//div[first()//p//text()]]")
-
-	location := e.ChildText("//*[contains(contains(@id, 'divBusca')]//ul//li//a//div[position() = 3//h1//text()]]")
-	location = location + " em " + e.ChildText("//*[contains(contains(@id, 'divBusca')]//ul//li//a//div[position() = 3//h2//text()]]")
-	priceString := e.ChildText("//*[contains(contains(@id, 'divBusca')]//ul//li//a//div[position() = 2//span//text()]]")
-	price, _ := parsePrice(priceString)
-	spaceString := e.ChildText("//*[contains(@class, 'pull-left')]//span[position() = 4]//text()")
-	livingSpace := parseSpaceString(spaceString)
-	roomsString := e.ChildText("//*[contains(@class, 'pull-left')]//span[position()= 1]//text()]")
-	rooms, _ := parseFloat(roomsString, " quartos")
-	log.Print("-> Selector:" + selector +
-		"-> Title: " + title +
-		"-> URL: " + url +
-		"-> Selector Previous: " + selector_previous +
-		"-> Price: " + price +
-		"-> PriceString: " + priceString +
-		"-> SpaceSpring: " + spaceString +
-		"-> livingSpace: " + livingSpace +
-		"-> roomString: " + roomsString +
-		"-> rooms: " + fmt.Sprintf("%.2f", rooms))
-
-	return Item{
-		Title:       title,
-		Location:    location,
-		Price:       price,
-		LivingSpace: livingSpace,
-		Rooms:       rooms,
-		Url:         e.Request.AbsoluteURL(url),
-		ScrapedAt:   time.Now().UTC(),
-	}
 }
 
 func (platform LifeImob) NewCollector(config Config) *colly.Collector {
@@ -99,30 +47,22 @@ func (platform LifeImob) crawl(config Config, exporter Exporter) *colly.Collecto
 	if err := c.Run("https://www.lifeimob.com.br/index.asp?id_pagina=8&OrdernarPor=Preco%20DESC&ValorDe=0&ValorAte=500000000&cidade=3326"); err != nil {
 		log.Print(err)
 	}
-
-	//c.Visit("https://www.lifeimob.com.br/index.asp?id_pagina=8&OrdernarPor=Preco%20DESC&ValorDe=0&ValorAte=500000000&cidade=3326")
 	return colly
 }
 
 func (e *Ext) Visit(ctx *gocrawl.URLContext, res *http.Response, doc *goquery.Document) (interface{}, bool) {
-	fmt.Printf("Visit: %s\n", ctx.URL())
-
 	spaceString := ""
 	priceString := ""
 	roomString := ""
 	title := ""
-	location := ""
+	locationString := ""
 
-	star := doc.Find(".texts-center")
-	if star.Length() > 0 {
-		star.Each(func(i int, n *goquery.Selection) {
-			link := n.Find("b")
-			title = link.Text()
-			log.Printf("Title: %v\n", title)
-
-			location = n.Find("h1").Text()
-			log.Printf("Location: %v\n", location)
-
+	header := doc.Find(".texts-center")
+	if header.Length() > 0 {
+		header.Each(func(i int, n *goquery.Selection) {
+			textHeader := n.Find("b")
+			title = textHeader.Text()
+			locationString = n.Find("h1").Text()
 		})
 	}
 
@@ -130,9 +70,6 @@ func (e *Ext) Visit(ctx *gocrawl.URLContext, res *http.Response, doc *goquery.Do
 	if data.Length() > 0 {
 		data.Each(func(i int, n *goquery.Selection) {
 			n.Find("li").Each(func(cont int, found *goquery.Selection) {
-				dadosGenericos := found.Text()
-				log.Printf("All: %v\n", dadosGenericos)
-
 				if strings.Contains(found.Text(), "Área Total") {
 					spaceString = found.Text()
 				} else if strings.Contains(found.Text(), "Área Terreno") {
@@ -158,6 +95,7 @@ func (e *Ext) Visit(ctx *gocrawl.URLContext, res *http.Response, doc *goquery.Do
 	log.Printf("URL: %v\n", url)
 
 	titleParsed := parseTitle(title)
+	location := parseLocationLifeImob(locationString)
 	rooms, _ := parseRoomsLifeImob(roomString)
 	space := parseSpaceLifeImob(spaceString)
 	price := parsePriceLifeImob(priceString)

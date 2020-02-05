@@ -17,6 +17,11 @@ type EmailSender struct {
 	scraperName string
 }
 
+type KeyValue struct {
+	Key   string
+	Value interface{}
+}
+
 func (emailer EmailSender) writeAndSend() {
 
 	collectedRegistries := getNewRegistries(emailer.scraperName)
@@ -58,7 +63,8 @@ func getNewRegistries(scraperName string) string {
 			log.Println(key, ": ", value)
 			pairs = pairs + key + ": " + fmt.Sprintf("%v", value) + " | "
 		}
-		collectedRegistries = collectedRegistries + fmt.Sprintf("%v", counter) + " - " + pairs + "\n"
+
+		collectedRegistries = collectedRegistries + fmt.Sprintf("%v", counter) + " - " + pairs + "\n\n"
 		pairs = ""
 	}
 
