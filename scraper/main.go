@@ -70,7 +70,7 @@ func readConfig(params url.Values) Config {
 	available := map[string]Platform{
 		//"ebay_kleinanzeigen": EBayKleinanzeigen{},
 		//"jus_sl": Jus_sl{},
-		//"ag3": Ag3{},
+		//postman"ag3": Ag3{},
 		//"rodrigues": Rodrigues{},
 		"lifeImob": LifeImob{},
 		//"nestpick":           Nestpick{},
@@ -141,6 +141,7 @@ func startDBService() (dbAccess DBCall) {
 		if errFirestore != nil {
 			log.Fatalf("firebase.NewClient: %v", errorApp)
 		}
+
 		//defer client.Close()
 		return DBCall{
 			DBClient:  client,
@@ -158,6 +159,7 @@ func Run(params url.Values) string {
 		sender := EmailSender{scraperName: fileName}
 		fileName = path.Join(config.dataDir, fileName+".csv")
 		exporter := CSVExporter{fileName: fileName}
+		log.Println("Calling LifeImob")
 		exporter.run(config, platform.crawl)
 		//TODO: version 1.3 -> just store the new items
 		config.storage.write(fileName)

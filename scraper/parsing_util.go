@@ -2,6 +2,7 @@ package cloudrun
 
 import (
 	"log"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -34,4 +35,31 @@ func parseFloat(valueStr string, unit string) (float64, error) {
 func parseURL(urlString string, space string) string {
 	replacer := strings.NewReplacer(space, "")
 	return replacer.Replace(urlString)
+}
+
+func parseTitle(value string) string {
+	return strings.Replace(value, " C", "C", -1)
+}
+
+func parseRoomsLifeImob(value string) (float64, error) {
+	log.Printf("To be Replaced: %v\n", value)
+	replaced := strings.ReplaceAll(value, "Dormitório(s) ", "")
+	log.Printf("Replaced: %v\n", replaced)
+	return strconv.ParseFloat(replaced, 64)
+}
+
+func parseSpaceLifeImob(value string) string {
+	replaced := strings.Replace(value, "Área Total ", "", -1)
+	replaced = strings.Replace(replaced, "Área Terreno ", "", -1)
+	replaced = strings.Replace(replaced, "Área privativa ", "", -1)
+	return replaced
+}
+
+func parsePriceLifeImob(value string) string {
+	regexNoTabs := regexp.MustCompile(`\x{0009}`)
+	regexNoNewLines := regexp.MustCompile(`\x{000D}\x{000A}|[\x{000A}\x{000B}\x{000C}\x{000D}\x{0085}\x{2028}\x{2029}]`)
+	replaced := regexNoTabs.ReplaceAllString(value, ``)
+	replaced = regexNoNewLines.ReplaceAllString(replaced, ``)
+	return strings.Replace(replaced, "Valor", "", -1)
+
 }
