@@ -58,7 +58,7 @@ func getNewRegistries(scraperName string) string {
 			log.Println(key, ": ", value)
 			pairs = pairs + key + ": " + fmt.Sprintf("%v", value) + " | "
 		}
-		collectedRegistries = collectedRegistries + fmt.Sprintf("%v", counter) + " - " + pairs + "\n"
+		collectedRegistries = collectedRegistries + fmt.Sprintf("%v", counter) + " - " + pairs + "\n\n"
 		pairs = ""
 	}
 
@@ -73,17 +73,18 @@ func sendEmail(body string, scraper string) {
 	jaquelineEmail := "Jaqueline@gprimeimoveis.com.br"
 	tiarleEmail := "tiarle@gprimeimoveis.com.br"
 	GuiEmail := "guilherme@gprimeimoveis.com.br"
+	RosiEmail := "rosiani@gprimeimoveis.com.br"
 
 	//TODO: change subject name so it contains the current date as well
 	msg := "From: " + from + "\n" +
-		"To: " + claudioEmail + "," + jaquelineEmail + "," + tiarleEmail + "," + GuiEmail + "\n" +
+		"To: " + claudioEmail + "," + jaquelineEmail + "," + tiarleEmail + "," + GuiEmail + "," + RosiEmail + "\n" +
 		"Subject: Novos Imóveis" + scraper + "\n\n" + body
 
 	log.Println("Msg: ", msg)
 
 	err := smtp.SendMail("smtp.gmail.com:587",
 		smtp.PlainAuth("", from, pass, "smtp.gmail.com"),
-		from, []string{jaquelineEmail, claudioEmail}, []byte(msg))
+		from, []string{jaquelineEmail, claudioEmail, tiarleEmail, GuiEmail, RosiEmail}, []byte(msg))
 
 	if err != nil {
 		log.Fatalf("smtp error: %s", err)

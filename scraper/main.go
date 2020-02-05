@@ -68,9 +68,10 @@ func (record Item) csvRow() []string {
 func readConfig(params url.Values) Config {
 	available := map[string]Platform{
 		//"ebay_kleinanzeigen": EBayKleinanzeigen{},
-		"jus_sl": Jus_sl{},
-		"ag3": Ag3{},
+		"jus_sl":    Jus_sl{},
+		"ag3":       Ag3{},
 		"rodrigues": Rodrigues{},
+		"lifeImob":  LifeImob{},
 		//"nestpick":           Nestpick{},
 	}
 

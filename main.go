@@ -7,7 +7,7 @@ import (
 	"os"
 
 	scraper "github.com/BardoBravo/real-estate-finder/scraper"
-	//scraper "./scraper"
+	//scraper "real-estate-finder/scraper"
 )
 
 func main() {
