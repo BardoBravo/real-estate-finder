@@ -77,14 +77,14 @@ func sendEmail(body string, scraper string) {
 
 	//TODO: change subject name so it contains the current date as well
 	msg := "From: " + from + "\n" +
-		"To: " + claudioEmail + "," + jaquelineEmail + "," + tiarleEmail + "," + GuiEmail + "," + RosiEmail + "\n" +
+		"To: " + claudioEmail + "," + jaquelineEmail + "," + tiarleEmail + "," + GuiEmail + "," + RicardoEmail + "\n" +
 		"Subject: Novos Imóveis" + scraper + "\n\n" + body
 
 	log.Println("Msg: ", msg)
 
 	err := smtp.SendMail("smtp.gmail.com:587",
 		smtp.PlainAuth("", from, pass, "smtp.gmail.com"),
-		from, []string{jaquelineEmail, claudioEmail, tiarleEmail, GuiEmail, RosiEmail}, []byte(msg))
+		from, []string{jaquelineEmail, claudioEmail, tiarleEmail, GuiEmail, RicardoEmail}, []byte(msg))
 
 	if err != nil {
 		log.Fatalf("smtp error: %s", err)
